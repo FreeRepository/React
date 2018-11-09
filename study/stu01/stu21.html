@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>React 实例</title>
+    <script src="https://cdn.staticfile.org/react/16.4.0/umd/react.development.js"></script>
+    <script src="https://cdn.staticfile.org/react-dom/16.4.0/umd/react-dom.development.js"></script>
+    <script src="https://cdn.staticfile.org/babel-standalone/6.26.0/babel.min.js"></script>
+</head>
+<body>
+<div id="example"></div>
+
+<script type="text/babel">
+    function Mailbox(props) {
+        const unreadMessages = props.unreadMessages;
+        return (
+            <div>
+                <h1>Hello!</h1>
+                {unreadMessages.length > 0 &&
+                <h2>
+                    您有 {unreadMessages.length} 条未读信息。
+                </h2>
+                }
+            </div>
+        );
+    }
+
+    const messages = ['React', 'Re: React', 'Re:Re: React'];
+    ReactDOM.render(
+        <Mailbox unreadMessages={messages} />,
+        document.getElementById('example')
+    );
+</script>
+
+</body>
+</html>
